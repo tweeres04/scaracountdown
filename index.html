@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#ffffff">
+	<title>Scara Countdown</title>
+	<link href="https://fonts.googleapis.com/css?family=Arsenal" rel="stylesheet">
+	<style>
+		* {
+			font-family: 'Arsenal', sans-serif;
+		}
+
+		body {
+			font-size: 2em;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+			text-align: center;
+		}
+
+		.countdown {
+			font-size: 1.5em;
+		}
+	</style>
+</head>
+
+<body>
+	<span class="countdown"></span>
+	<p>until Scara moves to Victoria</p>
+	<script src="node_modules/countdown/countdown.js"></script>
+	<script>
+		const handle = setInterval(update, 1000);
+		update();
+		function update(){
+			const date = new Date(2018, 6, 1);
+			console.log(date);
+			const element = document.querySelector('.countdown');
+			element.textContent = countdown(date).toString(0);
+		}
+	</script>
+</body>
+</html>

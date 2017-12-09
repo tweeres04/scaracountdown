@@ -1,0 +1,15 @@
+{
+  "name": "scaracountdown",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "scp index.html root@scaracountdown.xyz:/var/www/scaracountdown && ssh root@scaracountdown.xyz 'mkdir -p /var/www/scaracountdown/node_modules/countdown' && scp node_modules/countdown/countdown.js root@scaracountdown.xyz:/var/www/scaracountdown/node_modules/countdown"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "countdown": "^2.6.0"
+  }
+}
